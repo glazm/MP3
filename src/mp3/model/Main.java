@@ -6,6 +6,11 @@ import mp3.model.abstractClass.Stationary;
 import mp3.model.disjoint.Actor;
 import mp3.model.disjoint.MovieStar;
 import mp3.model.disjoint.TheatricalActor;
+import mp3.model.overlapping.SportsmanImplementation;
+import mp3.model.overlapping.SportsmanType;
+
+
+import java.util.EnumSet;
 
 public class Main {
     public static void main(String[]args){
@@ -25,5 +30,28 @@ public class Main {
         System.out.println("    "+phone1.toString()+", "+phone1.getCallCost());
         System.out.println("    "+phone2.toString()+", "+phone2.getCallCost());
 
+        System.out.println("*OVERLAPPING*");
+        SportsmanImplementation swimmer = new SportsmanImplementation("Bob","Great",30,"Speedo",null, EnumSet.of(SportsmanType.SWIMMER));
+        System.out.println("    "+swimmer.getEquipment());
+        System.out.println("    "+swimmer+'\n');
+
+        SportsmanImplementation biker = new SportsmanImplementation("Hans","Fast",23,null,"CROSS",EnumSet.of(SportsmanType.BIKER));
+        System.out.println("    "+biker.getEquipment());
+        System.out.println("    "+biker+'\n');
+
+        SportsmanImplementation swimmerAndBiker = new SportsmanImplementation("George", "Joy",26,"BojoSwim","FastFastFast",EnumSet.of(SportsmanType.BIKER,SportsmanType.SWIMMER));
+        System.out.println("    "+swimmerAndBiker.getEquipment());
+        System.out.println("    "+swimmerAndBiker+'\n');
+
+        SportsmanImplementation sportsmanWithoutEquipment = new SportsmanImplementation("Henry", "Sad",18,null,null,EnumSet.of(SportsmanType.BIKER,SportsmanType.SWIMMER));
+        System.out.println("    "+sportsmanWithoutEquipment.getEquipment());
+        System.out.println("    "+sportsmanWithoutEquipment);
+        sportsmanWithoutEquipment.setBikeType("BMX");
+        sportsmanWithoutEquipment.setSwimmingSuit("Ultra Speedo");
+        System.out.println("    "+sportsmanWithoutEquipment.getEquipment());
+
+        //Exceptions commented for clear test run of code
+//        System.out.println("    "+swimmer.getBikeType());
+//        System.out.println("    "+biker.getSwimmingSuit());
     }
 }
