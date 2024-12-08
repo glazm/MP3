@@ -17,7 +17,7 @@ public class VehicleImplementation implements Car, Motorbike, Vehicle{
 
     private VehicleType vehicleType;
 
-    public VehicleImplementation(String brand, LocalDate dateOfProduction, int numOfWheels, String inflatableVest, boolean motorbikeHelmet, int howManySeats, int howManyAirbags, VehicleType vehicleType) {
+    public VehicleImplementation(String brand, LocalDate dateOfProduction, int numOfWheels, String inflatableVest, Boolean motorbikeHelmet, Integer howManySeats, Integer howManyAirbags, VehicleType vehicleType) {
         setVehicleType(vehicleType);
 
         setBrand(brand);
@@ -170,29 +170,33 @@ public class VehicleImplementation implements Car, Motorbike, Vehicle{
         }
     }
 
-    public void beCar(int howManySeats, int howManyAirbags){
+    public void beCar(Integer howManySeats, Integer howManyAirbags){
         //validation is needed
-//        if(howManySeats != null && howManyAirbags != null) {    ??
+        if(howManySeats != null && howManyAirbags != null) {
             this.howManySeats = howManySeats;
             this.howManyAirbags = howManyAirbags;
 
-        this.inflatableVest = null;
-        this.motorbikeHelmet = null;
-        setVehicleType(VehicleType.CAR);
-
-//        }else{
-//            throw new ValException("Need all arguments required by Car");
-//        }
+            this.inflatableVest = null;
+            this.motorbikeHelmet = null;
+            setVehicleType(VehicleType.CAR);
+        }
+        else{
+            throw new ValException("Need all arguments required by Car");
+        }
     }
 
-    public void beMotorbike(String inflatableVest, boolean motorbikeHelmet){
+    public void beMotorbike(String inflatableVest, Boolean motorbikeHelmet){
         //validation is needed
-        this.inflatableVest = inflatableVest;
-        this.motorbikeHelmet = motorbikeHelmet;
+        if(inflatableVest != null && motorbikeHelmet != null) {
+            this.inflatableVest = inflatableVest;
+            this.motorbikeHelmet = motorbikeHelmet;
 
-        this.howManySeats = null;
-        this.howManyAirbags = null;
-        setVehicleType(VehicleType.MOTORBIKE);
+            this.howManySeats = null;
+            this.howManyAirbags = null;
+            setVehicleType(VehicleType.MOTORBIKE);
+        }else{
+            throw new ValException("Need all arguments required by Motorbike");
+        }
     }
 
 

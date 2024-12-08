@@ -111,16 +111,35 @@ public class Main {
 
         System.out.println("*DYNAMIC*");
         VehicleImplementation vehicle1 = new VehicleImplementation("Toyota",LocalDate.of(1999,7,15),4,null,false,4,5, VehicleType.CAR);
-        
+        VehicleImplementation vehicle2 = new VehicleImplementation("Honda",LocalDate.of(2012,4,20),2,"Helite Turtle",true,null,null, VehicleType.MOTORBIKE);
+        VehicleImplementation vehicle3 = new VehicleImplementation("Fiat",LocalDate.of(2022,1,7),2,"Helite Turtle",false,3,2, VehicleType.MOTORBIKE);
 
-        System.out.println(vehicle1);
-        System.out.println(vehicle1.safetyMeasures());
+        System.out.println("    Before change of vehicle: "+vehicle1);
+        System.out.println("    "+vehicle1.safetyMeasures());
         vehicle1.beMotorbike("Dainese Smart",true);
-        System.out.println(vehicle1);
-        System.out.println(vehicle1.safetyMeasures());
+        System.out.println("    After change of vehicle: "+vehicle1);
+        System.out.println("    "+vehicle1.safetyMeasures()+'\n');
 
+        System.out.println("    Before change of vehicle: "+vehicle2);
+        System.out.println("    "+vehicle2.safetyMeasures());
+        vehicle2.beCar(2,3);
+        System.out.println("    After change of vehicle: "+vehicle2);
+        System.out.println("    "+vehicle2.safetyMeasures()+'\n');
 
+        System.out.println("    Before change of vehicle: "+vehicle3);
+        System.out.println("    "+vehicle3.safetyMeasures());
+        vehicle3.beCar(4,3);
+        System.out.println("    After change of vehicle: "+vehicle3);
+        System.out.println("    "+vehicle3.safetyMeasures()+'\n');
 
+        //Exceptions commented for clear test run of code
+//        System.out.println(vehicle3.getMotorbikeHelmet());
+//        System.out.println(vehicle2.getInflatableVest());
+//        System.out.println(vehicle1.getHowManyAirbags());
+//        System.out.println(vehicle1.getHowManySeats());
+
+//        vehicle3.beMotorbike(null,null);
+//        vehicle1.beCar(null,null);
 
     }
 }
