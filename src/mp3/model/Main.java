@@ -6,6 +6,8 @@ import mp3.model.abstractClass.Stationary;
 import mp3.model.disjoint.Actor;
 import mp3.model.disjoint.MovieStar;
 import mp3.model.disjoint.TheatricalActor;
+import mp3.model.dynamic.VehicleImplementation;
+import mp3.model.dynamic.VehicleType;
 import mp3.model.multiAspect.Amphibian;
 import mp3.model.multiAspect.Animal;
 import mp3.model.multiAspect.AnimalNutrition;
@@ -106,6 +108,18 @@ public class Main {
         //Exceptions commented for clear test run of code
 //        frog.hunt();
 //        human.seekShelter();
+
+        System.out.println("*DYNAMIC*");
+        VehicleImplementation vehicle1 = new VehicleImplementation("Toyota",LocalDate.of(1999,7,15),4,null,false,4,5, VehicleType.CAR);
+        
+
+        System.out.println(vehicle1);
+        System.out.println(vehicle1.safetyMeasures());
+        vehicle1.beMotorbike("Dainese Smart",true);
+        System.out.println(vehicle1);
+        System.out.println(vehicle1.safetyMeasures());
+
+
 
 
     }
