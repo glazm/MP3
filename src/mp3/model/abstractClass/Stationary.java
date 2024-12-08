@@ -28,15 +28,15 @@ public class Stationary extends Phone{
 
     @Override
     public float getCallCost() {
-        return (float) getStationaryCallCost() * getCallDuration();
+        return (float) getStationaryCallCost() * super.getCallDuration();
     }
 
     @Override
     public String toString() {
-        return  getName()+", "+
-                getProvider()+", "+
-                getCallDuration()+", "+
-                isItRotary +", "+
-                + stationaryCallCost;
+        return  super.getName()+", "+
+                super.getProvider()+", "+
+                super.getCallDuration()+", "+
+                getIsItRotary() +", "+
+                + getStationaryCallCost();
     }
 }

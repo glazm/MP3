@@ -6,6 +6,7 @@ import mp3.model.abstractClass.Stationary;
 import mp3.model.disjoint.Actor;
 import mp3.model.disjoint.MovieStar;
 import mp3.model.disjoint.TheatricalActor;
+import mp3.model.multiInheritance.*;
 import mp3.model.overlapping.SportsmanImplementation;
 import mp3.model.overlapping.SportsmanType;
 
@@ -27,8 +28,10 @@ public class Main {
         Phone phone1 = new Mobile("NokiaE50","Orange",50,true,1.5);
         Phone phone2 = new Stationary("Motorola135D","Plus",150,false,.25);
 
-        System.out.println("    "+phone1.toString()+", "+phone1.getCallCost());
-        System.out.println("    "+phone2.toString()+", "+phone2.getCallCost());
+        System.out.println("    "+phone1);
+        System.out.println("    "+phone1.getCallCost());
+        System.out.println("    "+phone2);
+        System.out.println("    "+phone2.getCallCost());
 
         System.out.println("*OVERLAPPING*");
         SportsmanImplementation swimmer = new SportsmanImplementation("Bob","Great",30,"Speedo",null, EnumSet.of(SportsmanType.SWIMMER));
@@ -53,5 +56,28 @@ public class Main {
         //Exceptions commented for clear test run of code
 //        System.out.println("    "+swimmer.getBikeType());
 //        System.out.println("    "+biker.getSwimmingSuit());
+
+        System.out.println("*MULTI INHERITANCE*");
+//        Musician guitarist = new Guitarist("Tom","Head",30,"Ibanez",true);
+        Guitarist guitarist = new Guitarist("Tom","Head",30,"Ibanez",true);
+//        Musician dj = new DJImplementation("Dominic","Cuban",5,"PIONEER",true);
+        DJImplementation dj = new DJImplementation("Dominic","Cuban",5,"PIONEER",true);
+//        Musician djGuitarist = new DJGuitarist("Hanna","Fun",7,"Harley Benton",false,"Numark",true);
+        DJGuitarist djGuitarist = new DJGuitarist("Hanna","Fun",7,"Harley Benton",false,"Numark",true);
+
+        System.out.println("    Guitarist info: "+guitarist);
+        System.out.println("    guitar -> "+guitarist.getGuitar());
+        System.out.println("    music tempo in bpm's -> "+guitarist.getMusicTempo()+'\n');
+
+        System.out.println("    DJ info: "+dj);
+        System.out.println("    mixer -> "+dj.getMixer());
+        System.out.println("    music tempo in bpm's -> "+dj.getMusicTempo()+'\n');
+
+        System.out.println("    DJGuitarist info: "+djGuitarist);
+        System.out.println("    guitar -> "+djGuitarist.getGuitar());
+        System.out.println("    mixer -> "+djGuitarist.getMixer());
+        System.out.println("    music tempo in bpm's -> "+djGuitarist.getMusicTempo());
+
+
     }
 }

@@ -28,15 +28,15 @@ public class Mobile extends Phone{
 
     @Override
     public float getCallCost() {
-        return (float)getMobileCallCost() * getCallDuration();
+        return (float)getMobileCallCost() * super.getCallDuration();
     }
 
     @Override
     public String toString() {
-        return  getName()+", "+
-                getProvider()+", "+
-                getCallDuration()+", "+
-                fiveGReady +", "+
-                + mobileCallCost;
+        return  super.getName()+", "+
+                super.getProvider()+", "+
+                super.getCallDuration()+", "+
+                getFiveGReady() +", "+
+                + getMobileCallCost();
     }
 }

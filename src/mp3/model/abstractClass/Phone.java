@@ -6,9 +6,9 @@ public abstract class Phone {
     private float callDuration;
 
     public Phone(String name, String provider, float callDuration) {
-        setName(name);
-        setProvider(provider);
-        setCallDuration(callDuration);
+        this.name = name;
+        this.provider = provider;
+        this.callDuration = callDuration;
     }
 
     public String getName() {
