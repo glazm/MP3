@@ -6,11 +6,16 @@ import mp3.model.abstractClass.Stationary;
 import mp3.model.disjoint.Actor;
 import mp3.model.disjoint.MovieStar;
 import mp3.model.disjoint.TheatricalActor;
+import mp3.model.multiAspect.Amphibian;
+import mp3.model.multiAspect.Animal;
+import mp3.model.multiAspect.AnimalNutrition;
+import mp3.model.multiAspect.Mammal;
 import mp3.model.multiInheritance.*;
 import mp3.model.overlapping.SportsmanImplementation;
 import mp3.model.overlapping.SportsmanType;
 
 
+import java.time.LocalDate;
 import java.util.EnumSet;
 
 public class Main {
@@ -77,6 +82,30 @@ public class Main {
         System.out.println("    guitar -> "+djGuitarist.getGuitar());
         System.out.println("    mixer -> "+djGuitarist.getMixer());
         System.out.println("    music tempo in bpm's -> "+djGuitarist.getMusicTempo());
+
+        System.out.println("*MULTI ASPECT INHERITANCE*");
+        Amphibian frog = new Amphibian("Frog",5,"Europe", AnimalNutrition.HERBIVORE,null,null,2,false);
+        Mammal human = new Mammal("Human",18,"Asia",AnimalNutrition.CARNIVORE, LocalDate.of(2020,9,15),null,false,false);
+
+        System.out.println("    Frog info: "+frog);
+        System.out.println("    body temperature -> "+frog.bodyTemp());
+        frog.seekShelter();
+        frog.setEnvTemp(25.5);
+        System.out.println("    body temperature -> "+frog.bodyTemp());
+        System.out.println("    after hidding: "+frog);
+        System.out.println("    this frog is "+frog.getNutrition()+'\n');
+
+        System.out.println("    Human info: "+human);
+        System.out.println("    body temperature -> "+human.bodyTemp());
+        human.hunt();
+        human.setHungry(true);
+        System.out.println("    body temperature -> "+human.bodyTemp());
+        System.out.println("    after hunting: "+human);
+        System.out.println("    this human is "+human.getNutrition());
+
+        //Exceptions commented for clear test run of code
+//        frog.hunt();
+//        human.seekShelter();
 
 
     }
