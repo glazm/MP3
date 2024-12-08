@@ -18,7 +18,7 @@ public class MovieStar extends Actor{
 
     @Override
     public String toString() {
-        return  super.toString() +", " + //fix with using getter's
+        return  super.toString() +", " +
                 movie;
     }
 }

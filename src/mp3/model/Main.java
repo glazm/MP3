@@ -9,7 +9,6 @@ import mp3.model.disjoint.TheatricalActor;
 import mp3.model.dynamic.VehicleImplementation;
 import mp3.model.dynamic.VehicleType;
 import mp3.model.multiAspect.Amphibian;
-import mp3.model.multiAspect.Animal;
 import mp3.model.multiAspect.AnimalNutrition;
 import mp3.model.multiAspect.Mammal;
 import mp3.model.multiInheritance.*;
@@ -27,9 +26,9 @@ public class Main {
         MovieStar movieStar = new MovieStar("Phil","Good",130000,450000,"New Hit Movie");
         TheatricalActor theatricalActor = new TheatricalActor("Howard","Coward",45000,25000,"Classic Play");
 
-        System.out.println("    "+actor.toString());
-        System.out.println("    "+movieStar.toString());
-        System.out.println("    "+theatricalActor.toString());
+        System.out.println("    "+actor);
+        System.out.println("    "+movieStar);
+        System.out.println("    "+theatricalActor);
 
         System.out.println("*ABSTRACT CLASS*");
         Phone phone1 = new Mobile("NokiaE50","Orange",50,true,1.5);
@@ -65,11 +64,8 @@ public class Main {
 //        System.out.println("    "+biker.getSwimmingSuit());
 
         System.out.println("*MULTI INHERITANCE*");
-//        Musician guitarist = new Guitarist("Tom","Head",30,"Ibanez",true);
         Guitarist guitarist = new Guitarist("Tom","Head",30,"Ibanez",true);
-//        Musician dj = new DJImplementation("Dominic","Cuban",5,"PIONEER",true);
         DJImplementation dj = new DJImplementation("Dominic","Cuban",5,"PIONEER",true);
-//        Musician djGuitarist = new DJGuitarist("Hanna","Fun",7,"Harley Benton",false,"Numark",true);
         DJGuitarist djGuitarist = new DJGuitarist("Hanna","Fun",7,"Harley Benton",false,"Numark",true);
 
         System.out.println("    Guitarist info: "+guitarist);
@@ -137,7 +133,6 @@ public class Main {
 //        System.out.println(vehicle2.getInflatableVest());
 //        System.out.println(vehicle1.getHowManyAirbags());
 //        System.out.println(vehicle1.getHowManySeats());
-
 //        vehicle3.beMotorbike(null,null);
 //        vehicle1.beCar(null,null);
 

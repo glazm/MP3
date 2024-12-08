@@ -171,7 +171,6 @@ public class VehicleImplementation implements Car, Motorbike, Vehicle{
     }
 
     public void beCar(Integer howManySeats, Integer howManyAirbags){
-        //validation is needed
         if(howManySeats != null && howManyAirbags != null) {
             this.howManySeats = howManySeats;
             this.howManyAirbags = howManyAirbags;
@@ -186,7 +185,6 @@ public class VehicleImplementation implements Car, Motorbike, Vehicle{
     }
 
     public void beMotorbike(String inflatableVest, Boolean motorbikeHelmet){
-        //validation is needed
         if(inflatableVest != null && motorbikeHelmet != null) {
             this.inflatableVest = inflatableVest;
             this.motorbikeHelmet = motorbikeHelmet;
